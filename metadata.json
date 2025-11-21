@@ -1,0 +1,7 @@
+{
+  "name": "Blin OS: Interactive Desktop",
+  "description": "An interactive operating system concept based on glassmorphism, featuring a welcome animation with BLIN logo colors, a simulated file management system with detailed file type icons and content previews, runnable interactive applications (Spotify fake app with playback controls, interactive Browser with navigation, and a BLIN Navigator for file management), improved draggable desktop widgets (including weather, calendar, tasks, system monitor, and notes), a dynamic desktop with customizable backgrounds, and a login experience.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
