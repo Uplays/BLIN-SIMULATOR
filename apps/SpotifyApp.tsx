@@ -62,7 +62,8 @@ const SpotifyApp: React.FC<SpotifyAppProps> = ({ windowId, onClose }) => {
   const currentTrack = tracks[currentTrackIndex];
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    // FIX: Changed NodeJS.Timeout to number for browser compatibility
+    let interval: number;
     if (isPlaying && !isScrubbing) {
       interval = setInterval(() => {
         setCurrentTime((prevTime) => {

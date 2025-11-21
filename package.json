@@ -1,22 +1,21 @@
 {
-  "name": "blin-os:-interactive-desktop",
+  "name": "blin-os",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "homepage": "https://uplays.github.io/BLIN-SIMULATOR",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "@google/genai": "^1.30.0"
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "cp index.html dist/index.html && esbuild index.jsx --bundle --outfile=dist/bundle.js --loader:.jsx=jsx --define:process.env.NODE_ENV=\\\"production\\\" --minify",
+    "deploy": "npm run build && gh-pages -d dist",
+    "start": "esbuild index.jsx --bundle --outfile=dist/bundle.js --loader:.jsx=jsx --servedir=dist --watch"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "esbuild": "^0.23.0",
+    "gh-pages": "^6.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.3"
   }
 }
